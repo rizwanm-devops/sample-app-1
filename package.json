@@ -1,0 +1,15 @@
+{
+  "name": "sample-app-1",
+  "version": "1.0.0",
+  "description": "example repository for reuseable",
+  "main": "index.js",
+  "scripts": {
+    "test:e2e": "cypress run"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "13.6.1"
+  }
+}
