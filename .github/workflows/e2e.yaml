@@ -3,13 +3,24 @@ name: E2e test
 on:
   workflow_dispatch:
   workflow_call:
+    secrets:
+      access-token:
+        required: true
 
 jobs:
   e2e-test:
     runs-on: ubuntu-latest
     steps:
+      - name: print github owner and repo
+        run: |
+          echo "Github onwer and repo: ${{ github.repository}}"
+          
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          repository: rizwanm-devops/sample-app-1
+          ref: main
+          token: ${{ secrets.TEST_TOKEN }}
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
